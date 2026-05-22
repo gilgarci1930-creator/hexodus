@@ -1,6 +1,6 @@
 # Hexodus
 
-A next-generation Android theming engine for Samsung One UI 8 (Android 16+) as a spiritual successor to 'Hex Installer', leveraging Shizuku for system-level operations without requiring root access. Named as a combination of "Hex" (from Hex Installer) and "Android" (with "odus" suggesting a path forward).
+A next-generation Android theming engine for Samsung One UI 8 (Android 16+) as a spiritual successor to 'Hex Installer', leveraging Shizuku for system-level operations without requiring root access. Named as a combination of "Hex" (from Hex Installer) and "Android" (with "odus" suggesting a path forward). An Exodus to Hex Installer.
 
 ## 🚀 Features
 
