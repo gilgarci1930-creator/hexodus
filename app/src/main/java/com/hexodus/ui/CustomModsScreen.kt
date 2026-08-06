@@ -52,7 +52,7 @@ fun CustomModsScreen(navController: NavController) {
                     onClick = {
                         pendingUnverifiedMod = null
                         val launchIntent = context.packageManager.getLaunchIntentForPackage(mod.packageName)
-                        if (launchIntent != null) context.startActivity(launchIntent)
+                        if (launchIntent != null) runCatching { context.startActivity(launchIntent) }
                     },
                     colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
                 ) { Text("Launch Anyway") }
@@ -123,7 +123,7 @@ fun CustomModsScreen(navController: NavController) {
                         modifier = Modifier.clickable {
                             if (mod.isVerified) {
                                 val launchIntent = context.packageManager.getLaunchIntentForPackage(mod.packageName)
-                                if (launchIntent != null) context.startActivity(launchIntent)
+                                if (launchIntent != null) runCatching { context.startActivity(launchIntent) }
                             } else {
                                 pendingUnverifiedMod = mod
                             }

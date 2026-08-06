@@ -259,7 +259,9 @@ fun ShizukuAppDetailScreen(navController: NavController, appName: String) {
                             if (app!!.repoUrl.isNotBlank()) {
                                 OutlinedButton(
                                     onClick = {
-                                        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(app!!.repoUrl)))
+                                        runCatching {
+                                            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(app!!.repoUrl)))
+                                        }
                                     }
                                 ) {
                                     Icon(Icons.Default.Code, contentDescription = null, modifier = Modifier.size(16.dp))
@@ -284,7 +286,7 @@ fun ShizukuAppDetailScreen(navController: NavController, appName: String) {
                                             } else {
                                                 Uri.parse("https://play.google.com/store/search?q=${Uri.encode(app!!.name)}&c=apps")
                                             }
-                                            context.startActivity(Intent(Intent.ACTION_VIEW, webUri))
+                                            runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, webUri)) }
                                         }
                                 }
                             ) {
