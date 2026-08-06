@@ -76,11 +76,16 @@ class HexodusApplication : Application() {
         val throwable = event.throwable ?: return event
         return when {
             // Shizuku binder died — happens whenever Shizuku stops/restarts
-            throwable is android.os.DeadObjectException -> null
+            throwable is android.os.DeadObjectException ||
+                throwable is android.os.DeadSystemException -> null
+            // Transaction too large for IPC binder buffer
+            throwable is android.os.TransactionTooLargeException -> null
             // Permission denied before Shizuku grants access
             throwable is SecurityException &&
                 throwable.message?.contains("shizuku", ignoreCase = true) == true -> null
-            // Shizuku IPC failures
+            // Shizuku IPC failures or binder not received yet
+            throwable is IllegalStateException &&
+                throwable.message?.contains("binder", ignoreCase = true) == true -> null
             throwable is android.os.RemoteException &&
                 throwable.stackTrace.any { it.className.contains("shizuku", ignoreCase = true) } -> null
             else -> event

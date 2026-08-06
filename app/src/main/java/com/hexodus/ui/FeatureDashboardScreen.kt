@@ -507,7 +507,7 @@ fun FeatureDashboardScreen(navController: NavController? = null) {
                         description = "Old theme system via Xposed framework",
                         icon = Icons.Default.Palette,
                         isEnabled = legacyThemeEnabled,
-                        onToggle = { legacyThemeEnabled = it },
+                        onToggle = { legacyThemeEnabled = it; prefs.setFeatureEnabled("legacy_theme", it); applyFlag("legacy_theme", it) },
                         requirements = listOf("Root"),
                         deprecationInfo = DeprecationInfo(
                             message = "Use Hexodus Theme Engine v2 instead",
@@ -521,7 +521,7 @@ fun FeatureDashboardScreen(navController: NavController? = null) {
                         description = "Classic overlay management system",
                         icon = Icons.Default.Layers,
                         isEnabled = substratumEnabled,
-                        onToggle = { substratumEnabled = it },
+                        onToggle = { substratumEnabled = it; prefs.setFeatureEnabled("substratum", it); applyFlag("substratum", it) },
                         requirements = listOf("Root"),
                         deprecationInfo = DeprecationInfo(
                             message = "No longer maintained",
@@ -535,7 +535,7 @@ fun FeatureDashboardScreen(navController: NavController? = null) {
                         description = "System tweaks via GravityBox module",
                         icon = Icons.Default.Tune,
                         isEnabled = gravityBoxEnabled,
-                        onToggle = { gravityBoxEnabled = it },
+                        onToggle = { gravityBoxEnabled = it; prefs.setFeatureEnabled("gravitybox", it); applyFlag("gravitybox", it) },
                         requirements = listOf("Xposed"),
                         deprecationInfo = DeprecationInfo(
                             message = "Use native implementation instead",
