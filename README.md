@@ -1,9 +1,6 @@
-# Hexodus
-
 NOTE: THIS PROJECT IS NOT ACTIVE... HOWEVER... if I cannot get the original hex installer project working with Shizuku+, I will resort to redirecting users to this adaptation that's meant to incorporate the features from the original version to the best of our abilities. This project is not currently functioning, but expect updates here in the near future as I explore the potential possibilities of Android Theming on Samsung in 2026.
 
-————————————————————————————————————————————————————————
-
+## Hexodus
 A next-generation Android theming engine for Samsung One UI 8 (Android 16+) as a spiritual successor to 'Hex Installer', leveraging Shizuku for system-level operations without requiring root access. Named as a combination of "Hex" (from Hex Installer) and "Android" (with "odus" suggesting a path forward). An Exodus to Hex Installer.
 
 ## 🚀 Features
