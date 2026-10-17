@@ -1,3 +1,4 @@
+
 NOTE: THIS PROJECT IS NOT ACTIVE... HOWEVER... if I cannot get the original hex installer project working with Shizuku+, I will resort to redirecting users to this adaptation that's meant to incorporate the features from the original version to the best of our abilities. This project is not currently functioning, but expect updates here in the near future as I explore the potential possibilities of Android Theming on Samsung in 2026.
 
 ## Hexodus
